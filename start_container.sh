@@ -7,7 +7,7 @@ IMAGE_TAG="latest"
 
 cd "${APP_DIR}"
 
-echo "Resolving AWS region from instance metadata..."
+echo "Resolving AWS region from instance metadata........."
 TOKEN=$(curl -sS -X PUT "http://169.254.169.254/latest/api/token" \
   -H "X-aws-ec2-metadata-token-ttl-seconds: 60")
 AWS_REGION=$(curl -sS -H "X-aws-ec2-metadata-token: ${TOKEN}" \
